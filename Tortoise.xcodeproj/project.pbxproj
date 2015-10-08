@@ -21,6 +21,7 @@
 		B46582F71BC55AE000C57679 /* GoogleMaps.m in Sources */ = {isa = PBXBuildFile; fileRef = B46582F61BC55AE000C57679 /* GoogleMaps.m */; };
 		B46582FC1BC5613900C57679 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B46582FB1BC5613900C57679 /* CoreLocation.framework */; };
 		B46582FE1BC5613F00C57679 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B46582FD1BC5613F00C57679 /* MapKit.framework */; };
+		B46583461BC62BF900C57679 /* AFNetworking in Resources */ = {isa = PBXBuildFile; fileRef = B46583451BC62BF900C57679 /* AFNetworking */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,12 +61,13 @@
 		B46582D61BC4B3A800C57679 /* TortoiseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TortoiseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B46582DA1BC4B3A800C57679 /* TortoiseUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TortoiseUITests.m; sourceTree = "<group>"; };
 		B46582DC1BC4B3A800C57679 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B46582E81BC4B3CC00C57679 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		B46582E81BC4B3CC00C57679 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B46582EB1BC4B5C300C57679 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		B46582F51BC55AE000C57679 /* GoogleMaps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleMaps.h; sourceTree = "<group>"; };
 		B46582F61BC55AE000C57679 /* GoogleMaps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleMaps.m; sourceTree = "<group>"; };
 		B46582FB1BC5613900C57679 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B46582FD1BC5613F00C57679 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B46583451BC62BF900C57679 /* AFNetworking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AFNetworking; sourceTree = "<group>"; };
 		CCFEDC6EBE52D3C51CAF5AE9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,8 +191,8 @@
 		B46582ED1BC559D700C57679 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
-				B46582F51BC55AE000C57679 /* GoogleMaps.h */,
-				B46582F61BC55AE000C57679 /* GoogleMaps.m */,
+				B46583471BC62BFE00C57679 /* GoogleMaps */,
+				B46583451BC62BF900C57679 /* AFNetworking */,
 			);
 			name = ThirdParty;
 			sourceTree = "<group>";
@@ -229,6 +231,15 @@
 				B46582EB1BC4B5C300C57679 /* Constants.h */,
 			);
 			name = Constants;
+			sourceTree = "<group>";
+		};
+		B46583471BC62BFE00C57679 /* GoogleMaps */ = {
+			isa = PBXGroup;
+			children = (
+				B46582F51BC55AE000C57679 /* GoogleMaps.h */,
+				B46582F61BC55AE000C57679 /* GoogleMaps.m */,
+			);
+			name = GoogleMaps;
 			sourceTree = "<group>";
 		};
 		EBCE868A8F0DF6D2268B19F4 /* Frameworks */ = {
@@ -349,6 +360,7 @@
 				B46582C51BC4B3A800C57679 /* LaunchScreen.storyboard in Resources */,
 				B46582C21BC4B3A800C57679 /* Assets.xcassets in Resources */,
 				B46582E91BC4B3CC00C57679 /* Podfile in Resources */,
+				B46583461BC62BF900C57679 /* AFNetworking in Resources */,
 				B46582BD1BC4B3A800C57679 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
