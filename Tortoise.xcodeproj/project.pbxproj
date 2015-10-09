@@ -22,6 +22,8 @@
 		B46582FC1BC5613900C57679 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B46582FB1BC5613900C57679 /* CoreLocation.framework */; };
 		B46582FE1BC5613F00C57679 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B46582FD1BC5613F00C57679 /* MapKit.framework */; };
 		B46583461BC62BF900C57679 /* AFNetworking in Resources */ = {isa = PBXBuildFile; fileRef = B46583451BC62BF900C57679 /* AFNetworking */; };
+		B47E60F11BC75C2300187C51 /* HomeViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B47E60F01BC75C2300187C51 /* HomeViewTableViewCell.m */; };
+		B47E60F31BC76EE100187C51 /* paris.png in Resources */ = {isa = PBXBuildFile; fileRef = B47E60F21BC76EE100187C51 /* paris.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,9 @@
 		B46582FB1BC5613900C57679 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B46582FD1BC5613F00C57679 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B46583451BC62BF900C57679 /* AFNetworking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AFNetworking; sourceTree = "<group>"; };
+		B47E60EF1BC75C2300187C51 /* HomeViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewTableViewCell.h; sourceTree = "<group>"; };
+		B47E60F01BC75C2300187C51 /* HomeViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewTableViewCell.m; sourceTree = "<group>"; };
+		B47E60F21BC76EE100187C51 /* paris.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paris.png; sourceTree = "<group>"; };
 		CCFEDC6EBE52D3C51CAF5AE9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +150,7 @@
 				B46582B61BC4B3A800C57679 /* AppDelegate.m */,
 				B46582BB1BC4B3A800C57679 /* Main.storyboard */,
 				B46582C11BC4B3A800C57679 /* Assets.xcassets */,
+				B47E60F21BC76EE100187C51 /* paris.png */,
 				B46582C31BC4B3A800C57679 /* LaunchScreen.storyboard */,
 				B46582C61BC4B3A800C57679 /* Info.plist */,
 				B46582BE1BC4B3A800C57679 /* Tortoise.xcdatamodeld */,
@@ -182,8 +188,7 @@
 		B46582EC1BC559C600C57679 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B46582B81BC4B3A800C57679 /* HomeViewController.h */,
-				B46582B91BC4B3A800C57679 /* HomeViewController.m */,
+				B47E60ED1BC75BE800187C51 /* HomeView */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -240,6 +245,25 @@
 				B46582F61BC55AE000C57679 /* GoogleMaps.m */,
 			);
 			name = GoogleMaps;
+			sourceTree = "<group>";
+		};
+		B47E60ED1BC75BE800187C51 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				B47E60EE1BC75BFB00187C51 /* HMVCell */,
+				B46582B81BC4B3A800C57679 /* HomeViewController.h */,
+				B46582B91BC4B3A800C57679 /* HomeViewController.m */,
+			);
+			name = HomeView;
+			sourceTree = "<group>";
+		};
+		B47E60EE1BC75BFB00187C51 /* HMVCell */ = {
+			isa = PBXGroup;
+			children = (
+				B47E60EF1BC75C2300187C51 /* HomeViewTableViewCell.h */,
+				B47E60F01BC75C2300187C51 /* HomeViewTableViewCell.m */,
+			);
+			name = HMVCell;
 			sourceTree = "<group>";
 		};
 		EBCE868A8F0DF6D2268B19F4 /* Frameworks */ = {
@@ -362,6 +386,7 @@
 				B46582E91BC4B3CC00C57679 /* Podfile in Resources */,
 				B46583461BC62BF900C57679 /* AFNetworking in Resources */,
 				B46582BD1BC4B3A800C57679 /* Main.storyboard in Resources */,
+				B47E60F31BC76EE100187C51 /* paris.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +445,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B46582BA1BC4B3A800C57679 /* HomeViewController.m in Sources */,
+				B47E60F11BC75C2300187C51 /* HomeViewTableViewCell.m in Sources */,
 				B46582B71BC4B3A800C57679 /* AppDelegate.m in Sources */,
 				B46582C01BC4B3A800C57679 /* Tortoise.xcdatamodeld in Sources */,
 				B46582B41BC4B3A800C57679 /* main.m in Sources */,
