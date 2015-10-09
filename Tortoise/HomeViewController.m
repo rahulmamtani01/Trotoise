@@ -2,9 +2,6 @@
 //  ViewController.m
 //  Tortoise
 //
-//  Created by Namit Nayak on 10/6/15.
-//  Copyright © 2015 Namit Nayak. All rights reserved.
-//
 
 #import "HomeViewController.h"
 #import "GoogleMaps.h"
@@ -26,7 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    GoogleMaps * mapView =[[GoogleMaps alloc] initWithLatitude:0.0 longitude:0.0 zoom:6.0 frame:self.mapContainerView.frame];
+
+    GoogleMaps * mapView =[[GoogleMaps alloc] initWithLatitude:0 longitude:0 zoom:12 title:@"" snippet:@"" frame:self.mapContainerView.frame];
     [self.mapContainerView addSubview:mapView];
     
     [self dummyData];
@@ -77,7 +75,6 @@
      self.tableView.frame = CGRectMake(0,0,self.view.bounds.size.width, self.view.bounds.size.width);
         
     [UIView animateWithDuration:0.5 delay:0.4 options:UIViewAnimationOptionAllowAnimatedContent animations:^{
-
         
         self.topConstraint.constant = -20 + (self.view.frame.size.height/2);
         

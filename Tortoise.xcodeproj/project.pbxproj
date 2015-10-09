@@ -589,9 +589,11 @@
 			baseConfigurationReference = 13E8E4751433CCCC18437B3B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Tortoise/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.budhha.Tortoise;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bgtt.trotoise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -601,9 +603,11 @@
 			baseConfigurationReference = CCFEDC6EBE52D3C51CAF5AE9 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Tortoise/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.budhha.Tortoise;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bgtt.trotoise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
