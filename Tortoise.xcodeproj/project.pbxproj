@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		53A08DD8588BDDF586179090 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F193455596703917F8FEB9A /* libPods.a */; };
+		B4505E501BC8EA4200A3FF35 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4505E4F1BC8EA4200A3FF35 /* QuartzCore.framework */; };
 		B46582B41BC4B3A800C57679 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B46582B31BC4B3A800C57679 /* main.m */; };
 		B46582B71BC4B3A800C57679 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B46582B61BC4B3A800C57679 /* AppDelegate.m */; };
 		B46582BA1BC4B3A800C57679 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46582B91BC4B3A800C57679 /* HomeViewController.m */; };
@@ -23,6 +24,8 @@
 		B46582FE1BC5613F00C57679 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B46582FD1BC5613F00C57679 /* MapKit.framework */; };
 		B46583461BC62BF900C57679 /* AFNetworking in Resources */ = {isa = PBXBuildFile; fileRef = B46583451BC62BF900C57679 /* AFNetworking */; };
 		B47E60F11BC75C2300187C51 /* HomeViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B47E60F01BC75C2300187C51 /* HomeViewTableViewCell.m */; };
+		B4FAEB6E1BCA157A006E9C78 /* SlideOutMenuFiles in Resources */ = {isa = PBXBuildFile; fileRef = B4FAEB6D1BCA157A006E9C78 /* SlideOutMenuFiles */; };
+		B4FAEB721BCA1883006E9C78 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FAEB711BCA1883006E9C78 /* SplashViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,7 @@
 /* Begin PBXFileReference section */
 		0F193455596703917F8FEB9A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		13E8E4751433CCCC18437B3B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B4505E4F1BC8EA4200A3FF35 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B46582AF1BC4B3A800C57679 /* Tortoise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tortoise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B46582B31BC4B3A800C57679 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B46582B51BC4B3A800C57679 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -71,6 +75,9 @@
 		B46583451BC62BF900C57679 /* AFNetworking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AFNetworking; sourceTree = "<group>"; };
 		B47E60EF1BC75C2300187C51 /* HomeViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewTableViewCell.h; sourceTree = "<group>"; };
 		B47E60F01BC75C2300187C51 /* HomeViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewTableViewCell.m; sourceTree = "<group>"; };
+		B4FAEB6D1BCA157A006E9C78 /* SlideOutMenuFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SlideOutMenuFiles; sourceTree = "<group>"; };
+		B4FAEB701BCA1883006E9C78 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
+		B4FAEB711BCA1883006E9C78 /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
 		CCFEDC6EBE52D3C51CAF5AE9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4505E501BC8EA4200A3FF35 /* QuartzCore.framework in Frameworks */,
 				B46582FE1BC5613F00C57679 /* MapKit.framework in Frameworks */,
 				B46582FC1BC5613900C57679 /* CoreLocation.framework in Frameworks */,
 				53A08DD8588BDDF586179090 /* libPods.a in Frameworks */,
@@ -185,6 +193,7 @@
 		B46582EC1BC559C600C57679 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B4FAEB6F1BCA1833006E9C78 /* Splash */,
 				B47E60ED1BC75BE800187C51 /* HomeView */,
 			);
 			name = Controllers;
@@ -193,6 +202,7 @@
 		B46582ED1BC559D700C57679 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				B4FAEB6D1BCA157A006E9C78 /* SlideOutMenuFiles */,
 				B46583471BC62BFE00C57679 /* GoogleMaps */,
 				B46583451BC62BF900C57679 /* AFNetworking */,
 			);
@@ -263,9 +273,19 @@
 			name = HMVCell;
 			sourceTree = "<group>";
 		};
+		B4FAEB6F1BCA1833006E9C78 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				B4FAEB701BCA1883006E9C78 /* SplashViewController.h */,
+				B4FAEB711BCA1883006E9C78 /* SplashViewController.m */,
+			);
+			name = Splash;
+			sourceTree = "<group>";
+		};
 		EBCE868A8F0DF6D2268B19F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B4505E4F1BC8EA4200A3FF35 /* QuartzCore.framework */,
 				B46582FD1BC5613F00C57679 /* MapKit.framework */,
 				B46582FB1BC5613900C57679 /* CoreLocation.framework */,
 				0F193455596703917F8FEB9A /* libPods.a */,
@@ -382,6 +402,7 @@
 				B46582C21BC4B3A800C57679 /* Assets.xcassets in Resources */,
 				B46582E91BC4B3CC00C57679 /* Podfile in Resources */,
 				B46583461BC62BF900C57679 /* AFNetworking in Resources */,
+				B4FAEB6E1BCA157A006E9C78 /* SlideOutMenuFiles in Resources */,
 				B46582BD1BC4B3A800C57679 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B46582BA1BC4B3A800C57679 /* HomeViewController.m in Sources */,
+				B4FAEB721BCA1883006E9C78 /* SplashViewController.m in Sources */,
 				B47E60F11BC75C2300187C51 /* HomeViewTableViewCell.m in Sources */,
 				B46582B71BC4B3A800C57679 /* AppDelegate.m in Sources */,
 				B46582C01BC4B3A800C57679 /* Tortoise.xcdatamodeld in Sources */,
