@@ -24,8 +24,12 @@
 		B46582FE1BC5613F00C57679 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B46582FD1BC5613F00C57679 /* MapKit.framework */; };
 		B46583461BC62BF900C57679 /* AFNetworking in Resources */ = {isa = PBXBuildFile; fileRef = B46583451BC62BF900C57679 /* AFNetworking */; };
 		B47E60F11BC75C2300187C51 /* HomeViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B47E60F01BC75C2300187C51 /* HomeViewTableViewCell.m */; };
-		B4FAEB6E1BCA157A006E9C78 /* SlideOutMenuFiles in Resources */ = {isa = PBXBuildFile; fileRef = B4FAEB6D1BCA157A006E9C78 /* SlideOutMenuFiles */; };
+		B4B815321BCB666000C5E3BF /* ProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B815311BCB666000C5E3BF /* ProfileTableViewCell.m */; };
+		B4B815351BCB666F00C5E3BF /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B815341BCB666F00C5E3BF /* MenuTableViewCell.m */; };
+		B4B815381BCB66B800C5E3BF /* ShareTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B815371BCB66B800C5E3BF /* ShareTableViewCell.m */; };
 		B4FAEB721BCA1883006E9C78 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FAEB711BCA1883006E9C78 /* SplashViewController.m */; };
+		B4FAEB7C1BCB40C6006E9C78 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FAEB7B1BCB40C6006E9C78 /* MenuTableViewController.m */; };
+		B4FAEB831BCB4F5C006E9C78 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FAEB821BCB4F5C006E9C78 /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,9 +79,18 @@
 		B46583451BC62BF900C57679 /* AFNetworking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AFNetworking; sourceTree = "<group>"; };
 		B47E60EF1BC75C2300187C51 /* HomeViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewTableViewCell.h; sourceTree = "<group>"; };
 		B47E60F01BC75C2300187C51 /* HomeViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewTableViewCell.m; sourceTree = "<group>"; };
-		B4FAEB6D1BCA157A006E9C78 /* SlideOutMenuFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SlideOutMenuFiles; sourceTree = "<group>"; };
+		B4B815301BCB666000C5E3BF /* ProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTableViewCell.h; sourceTree = "<group>"; };
+		B4B815311BCB666000C5E3BF /* ProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewCell.m; sourceTree = "<group>"; };
+		B4B815331BCB666F00C5E3BF /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewCell.h; sourceTree = "<group>"; };
+		B4B815341BCB666F00C5E3BF /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewCell.m; sourceTree = "<group>"; };
+		B4B815361BCB66B800C5E3BF /* ShareTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareTableViewCell.h; sourceTree = "<group>"; };
+		B4B815371BCB66B800C5E3BF /* ShareTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareTableViewCell.m; sourceTree = "<group>"; };
 		B4FAEB701BCA1883006E9C78 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		B4FAEB711BCA1883006E9C78 /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
+		B4FAEB7A1BCB40C6006E9C78 /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewController.h; sourceTree = "<group>"; };
+		B4FAEB7B1BCB40C6006E9C78 /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewController.m; sourceTree = "<group>"; };
+		B4FAEB811BCB4F5C006E9C78 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		B4FAEB821BCB4F5C006E9C78 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		CCFEDC6EBE52D3C51CAF5AE9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,6 +206,7 @@
 		B46582EC1BC559C600C57679 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B4FAEB791BCB4088006E9C78 /* MenuViewController */,
 				B4FAEB6F1BCA1833006E9C78 /* Splash */,
 				B47E60ED1BC75BE800187C51 /* HomeView */,
 			);
@@ -202,7 +216,7 @@
 		B46582ED1BC559D700C57679 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
-				B4FAEB6D1BCA157A006E9C78 /* SlideOutMenuFiles */,
+				B4FAEB7D1BCB4F05006E9C78 /* SlideOut */,
 				B46583471BC62BFE00C57679 /* GoogleMaps */,
 				B46583451BC62BF900C57679 /* AFNetworking */,
 			);
@@ -273,6 +287,19 @@
 			name = HMVCell;
 			sourceTree = "<group>";
 		};
+		B4B8152E1BCB657D00C5E3BF /* MenuTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				B4B815301BCB666000C5E3BF /* ProfileTableViewCell.h */,
+				B4B815311BCB666000C5E3BF /* ProfileTableViewCell.m */,
+				B4B815331BCB666F00C5E3BF /* MenuTableViewCell.h */,
+				B4B815341BCB666F00C5E3BF /* MenuTableViewCell.m */,
+				B4B815361BCB66B800C5E3BF /* ShareTableViewCell.h */,
+				B4B815371BCB66B800C5E3BF /* ShareTableViewCell.m */,
+			);
+			name = MenuTableCell;
+			sourceTree = "<group>";
+		};
 		B4FAEB6F1BCA1833006E9C78 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +307,25 @@
 				B4FAEB711BCA1883006E9C78 /* SplashViewController.m */,
 			);
 			name = Splash;
+			sourceTree = "<group>";
+		};
+		B4FAEB791BCB4088006E9C78 /* MenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B4B8152E1BCB657D00C5E3BF /* MenuTableCell */,
+				B4FAEB7A1BCB40C6006E9C78 /* MenuTableViewController.h */,
+				B4FAEB7B1BCB40C6006E9C78 /* MenuTableViewController.m */,
+			);
+			name = MenuViewController;
+			sourceTree = "<group>";
+		};
+		B4FAEB7D1BCB4F05006E9C78 /* SlideOut */ = {
+			isa = PBXGroup;
+			children = (
+				B4FAEB811BCB4F5C006E9C78 /* SWRevealViewController.h */,
+				B4FAEB821BCB4F5C006E9C78 /* SWRevealViewController.m */,
+			);
+			name = SlideOut;
 			sourceTree = "<group>";
 		};
 		EBCE868A8F0DF6D2268B19F4 /* Frameworks */ = {
@@ -402,7 +448,6 @@
 				B46582C21BC4B3A800C57679 /* Assets.xcassets in Resources */,
 				B46582E91BC4B3CC00C57679 /* Podfile in Resources */,
 				B46583461BC62BF900C57679 /* AFNetworking in Resources */,
-				B4FAEB6E1BCA157A006E9C78 /* SlideOutMenuFiles in Resources */,
 				B46582BD1BC4B3A800C57679 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,10 +506,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4FAEB7C1BCB40C6006E9C78 /* MenuTableViewController.m in Sources */,
+				B4B815381BCB66B800C5E3BF /* ShareTableViewCell.m in Sources */,
 				B46582BA1BC4B3A800C57679 /* HomeViewController.m in Sources */,
 				B4FAEB721BCA1883006E9C78 /* SplashViewController.m in Sources */,
+				B4B815321BCB666000C5E3BF /* ProfileTableViewCell.m in Sources */,
 				B47E60F11BC75C2300187C51 /* HomeViewTableViewCell.m in Sources */,
 				B46582B71BC4B3A800C57679 /* AppDelegate.m in Sources */,
+				B4FAEB831BCB4F5C006E9C78 /* SWRevealViewController.m in Sources */,
+				B4B815351BCB666F00C5E3BF /* MenuTableViewCell.m in Sources */,
 				B46582C01BC4B3A800C57679 /* Tortoise.xcdatamodeld in Sources */,
 				B46582B41BC4B3A800C57679 /* main.m in Sources */,
 				B46582F71BC55AE000C57679 /* GoogleMaps.m in Sources */,

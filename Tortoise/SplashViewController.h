@@ -14,4 +14,5 @@
 @property (nonatomic,weak) IBOutlet UIPageControl *pageControl;
 @property (nonatomic,weak) IBOutlet UIButton *nextBtn;
 - (IBAction)changePage;
+
 @end

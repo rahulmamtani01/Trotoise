@@ -25,11 +25,16 @@
     
     self.splashImageArra = [NSArray arrayWithObjects:@"walkthrough1",@"walkthrough2",@"walkthrough3",@"walkthrough4",@"walkthrough5", nil];
     
+    [self setSplashScreen];
+    
+}
+-(void)setSplashScreen{
+    
     self.scrollView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     
-     scrollViewWidth = self.scrollView.frame.size.width;
+    scrollViewWidth = self.scrollView.frame.size.width;
     CGFloat scrollViewHeight = self.scrollView.frame.size.height;
-   
+    
     UIImageView *imageViewOne = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, scrollViewWidth, scrollViewHeight)]
     ;
     
@@ -65,66 +70,11 @@
     imageViewFive.image = [UIImage imageNamed:self.splashImageArra[4]];
     
     [self.scrollView addSubview:imageViewOne];
-    /*
-    NSLayoutConstraint *myConstraint =[NSLayoutConstraint
-                                       constraintWithItem:imageViewOne
-                                       attribute:NSLayoutAttributeTop
-                                       relatedBy:NSLayoutRelationEqual
-                                       toItem:self.scrollView
-                                       attribute:NSLayoutAttributeTop
-                                       multiplier:1.0
-                                       constant:0];
-    [self.scrollView addConstraint:myConstraint];
-    
-    myConstraint =[NSLayoutConstraint
-                                       constraintWithItem:imageViewOne
-                                       attribute:NSLayoutAttributeHeight
-                                       relatedBy:NSLayoutRelationEqual
-                                       toItem:self.scrollView
-                                       attribute:NSLayoutAttributeHeight
-                                       multiplier:1.0
-                                       constant:0];
-    
-    [self.scrollView addConstraint:myConstraint];
-    
-   myConstraint =[NSLayoutConstraint
-                                       constraintWithItem:imageViewOne
-                                       attribute:NSLayoutAttributeWidth
-                                       relatedBy:NSLayoutRelationEqual
-                                       toItem:self.scrollView
-                                       attribute:NSLayoutAttributeWidth
-                                       multiplier:1.0
-                                       constant:0];
-      [self.scrollView addConstraint:myConstraint];
-    myConstraint =[NSLayoutConstraint
-                   constraintWithItem:imageViewOne
-                   attribute:NSLayoutAttributeTrailingMargin
-                   relatedBy:NSLayoutRelationEqual
-                   toItem:self.scrollView
-                   attribute:NSLayoutAttributeTrailing
-                   multiplier:1.0
-                   constant:-20];
-
-    
-    [self.scrollView addConstraint:myConstraint];
-    myConstraint =[NSLayoutConstraint
-                   constraintWithItem:imageViewOne
-                   attribute:NSLayoutAttributeLeadingMargin
-                   relatedBy:NSLayoutRelationEqual
-                   toItem:self.scrollView
-                   attribute:NSLayoutAttributeLeading
-                   multiplier:1.0
-                   constant:-20];
-    [self.scrollView addConstraint:myConstraint];
-
-    [self.scrollView updateConstraints];
-    [self.scrollView setNeedsLayout];
-    */
     [self.scrollView addSubview:imageViewTwo];
-        [self.scrollView addSubview:imageViewThree];
-        [self.scrollView addSubview:imageViewFour];
-        [self.scrollView addSubview:imageViewFive];
-//
+    [self.scrollView addSubview:imageViewThree];
+    [self.scrollView addSubview:imageViewFour];
+    [self.scrollView addSubview:imageViewFive];
+    //
     
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * [self.splashImageArra count], self.scrollView.frame.size.height);
     
@@ -133,7 +83,6 @@
     
     self.pageControl.currentPage = 0;
     self.pageControl.numberOfPages = [self.splashImageArra count];
-    
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {

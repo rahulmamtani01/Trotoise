@@ -6,6 +6,7 @@
 #import "HomeViewController.h"
 #import "GoogleMaps.h"
 #import "HomeViewTableViewCell.h"
+#import "SWRevealViewController.h"
 
 @interface HomeViewController ()
 {
@@ -16,6 +17,7 @@
 @property (nonatomic,strong) IBOutlet UIView *mapContainerView;
 @property (nonatomic,strong) IBOutlet UITableView * tableView;
 @property (nonatomic,strong) IBOutlet HomeViewTableViewCell *hMVTableCell;
+@property (weak,nonatomic) IBOutlet UIBarButtonItem *barButton;
 
 @end
 
@@ -26,7 +28,12 @@
 
     GoogleMaps * mapView =[[GoogleMaps alloc] initWithLatitude:0 longitude:0 zoom:12 title:@"" snippet:@"" frame:self.mapContainerView.frame];
     [self.mapContainerView addSubview:mapView];
+    _barButton.target = self.revealViewController;
+    _barButton.action = @selector(revealToggle:);
     
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+
     [self dummyData];
     
     // Do any additional setup after loading the view, typically from a nib.
