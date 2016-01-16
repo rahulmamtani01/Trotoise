@@ -8,6 +8,7 @@
 #import "HomeViewTableViewCell.h"
 #import "SWRevealViewController.h"
 
+#import "TTAPIHandler.h"
 @interface HomeViewController ()
 {
     
@@ -33,7 +34,11 @@
     
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
-
+    [[TTAPIHandler sharedWorker] getMonumentListByCityID:@"3102" withRequestType:GET_MONUMENT_LIST_BY_CITYID responseHandler:^(NSArray *cityMonumentArra, NSError *error) {
+    
+        NSLog(@"einsde");
+        
+    }];
     [self dummyData];
     
     // Do any additional setup after loading the view, typically from a nib.
