@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9048" systemVersion="14F27" minimumToolsVersion="Automatic">
+    <entity name="CityMonument" representedClassName=".CityMonument" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="citymonumentrelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MonumentList" inverseName="citymonument" inverseEntity="MonumentList" spotlightIndexingEnabled="YES" storedInTruthFile="YES" syncable="YES"/>
+    </entity>
+    <entity name="MonumentList" representedClassName="MonumentList" syncable="YES">
+        <attribute name="addInfo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="shortDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbnail" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="citymonument" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CityMonument" inverseName="citymonumentrelationship" inverseEntity="CityMonument" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CityMonument" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="MonumentList" positionX="-54" positionY="18" width="128" height="180"/>
+    </elements>
 </model>
