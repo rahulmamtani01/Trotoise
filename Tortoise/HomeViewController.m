@@ -4,21 +4,27 @@
 //
 
 #import "HomeViewController.h"
-#import "GoogleMaps.h"
+//#import "GoogleMaps.h"
 #import "HomeViewTableViewCell.h"
 #import "SWRevealViewController.h"
-
+#import <GoogleMaps.h>
 #import "TTAPIHandler.h"
+#import "UIView+DragDrop.h"
+#import "UIFont+Trotoise.h"
 @interface HomeViewController ()
 {
     
 
 }
 @property (nonatomic,strong) NSMutableArray *dataArra;
-@property (nonatomic,strong) IBOutlet UIView *mapContainerView;
+@property (nonatomic,strong) IBOutlet GMSMapView *mapContainerView;
 @property (nonatomic,strong) IBOutlet UITableView * tableView;
-@property (nonatomic,strong) IBOutlet HomeViewTableViewCell *hMVTableCell;
+@property (nonatomic,strong) IBOutlet UIView *mainView;
 @property (weak,nonatomic) IBOutlet UIBarButtonItem *barButton;
+@property (nonatomic,weak) IBOutlet UISearchBar *searchBar;
+
+///Dragging
+
 
 @end
 
@@ -27,10 +33,51 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    GoogleMaps * mapView =[[GoogleMaps alloc] initWithLatitude:0 longitude:0 zoom:12 title:@"" snippet:@"" frame:self.mapContainerView.frame];
-    [self.mapContainerView addSubview:mapView];
+    NSShadow* shadow = [NSShadow new];
+    shadow.shadowOffset = CGSizeMake(0.0f, 1.0f);
+    shadow.shadowColor = [UIColor whiteColor];
+/*  [[UINavigationBar appearance] setTitleTextAttributes: @{
+                                                            NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                            NSFontAttributeName: [UIFont TrotoiseFontBold:20],
+                                                            NSShadowAttributeName: shadow
+  }];*/
+   self.title = @"TROTOISE";
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                                     [UIColor whiteColor], NSForegroundColorAttributeName,
+                                                                     shadow, NSShadowAttributeName,
+                                                                     [UIFont TrotoiseFontCondensedRegular:24], NSFontAttributeName, nil]];
+//    [[self.navigationController.navigationBar setTitleTextAttributes: ];
+
+    
+    UIButton* customButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [customButton setImage:[UIImage imageNamed:@"ic_language"] forState:UIControlStateNormal];
+    [customButton setTitle:@"En" forState:UIControlStateNormal];
+    [customButton.titleLabel setFont:[UIFont TrotoiseFontLight:18]];
+    [customButton sizeToFit];
+    UIBarButtonItem* customBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:customButton];
+    self.navigationItem.rightBarButtonItem = customBarButtonItem;
+    
+    _mapContainerView.myLocationEnabled = YES;
+    _mapContainerView.settings.compassButton = YES;
+    _mapContainerView.settings.myLocationButton = YES;
+    
     _barButton.target = self.revealViewController;
     _barButton.action = @selector(revealToggle:);
+    [_mainView makeDraggable];
+    [_mainView setDelegate:self];
+    [_mainView setDragMode:UIViewDragDropModeRestrictY];
+    [_mainView setStageTopPoint:self.mapContainerView.frame.origin];
+    for (id object in [[[_searchBar subviews] objectAtIndex:0] subviews])
+    {
+        if ([object isKindOfClass:[UIImageView class]])
+        {
+           UIImageView *imageViewObject = (UIImageView *)object;
+            [imageViewObject removeFromSuperview];
+            break;
+        }
+    }
+    
+    self.tableView.frame = CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y, self.tableView.frame.size.width, self.view.frame.size.height);
     
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
@@ -44,29 +91,75 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+- (BOOL) viewShouldReturnToStartingPosition:(UIView*)view
+{
+    
+    return NO;
+}
+-(void)draggingDidEndViewFrameSet:(CGRect)viewFrame{
+//    self.tableView.frame = viewFrame
+    [UIView animateWithDuration:0.1 animations:^{
+        self.bottomConstraint.constant= -viewFrame.size.height;
+//        [self updateViewConstraints];
+    }];
+    
+    //CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y, self.tableView.frame.size.width, viewFrame.size.height);
+    
+}
+- (void) draggingDidBeginForView:(UIView*)view
+{
+    
+}
+
+- (void) draggingDidEndWithoutDropForView:(UIView*)view
+{
+   
+}
+
+- (void) view:(UIView *)view didHoverOverDropView:(UIView *)dropView
+{
+   
+    
+}
+
+- (void) view:(UIView *)view didUnhoverOverDropView:(UIView *)dropView
+{
+}
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView;                                               // any offset changes
-{
-    
-    
-}
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView;                                               // any offset changes
+//{
+//    
+//    
+//}
 
 
 
 #pragma mark - UITableViewDataSource protocol methods
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _dataArra.count;
+    return 1;
 }
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return _dataArra.count;
+    
+}// Default is 1 if not implemented
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *ident = @"hMVTableCell";
-    // re-use or create a cell
-    HomeViewTableViewCell *cell = (HomeViewTableViewCell *)[tableView dequeueReusableCellWithIdentifier:ident forIndexPath:indexPath];
-    // find the to-do item for this index
-    NSDictionary *duck = [_dataArra objectAtIndex:indexPath.row];
+    
+    
+    HomeViewTableViewCell *cell = (HomeViewTableViewCell *)[tableView dequeueReusableCellWithIdentifier:ident];
+    if (cell == nil) {
+       NSArray *arr = [[NSBundle mainBundle] loadNibNamed:@"HMVCell" owner:self options:nil];
+        cell = (HomeViewTableViewCell *)[arr objectAtIndex:0];
+    }
+    
+    NSDictionary *duck = [_dataArra objectAtIndex:indexPath.section];
     
     cell.placeTitleLbl.text = [duck objectForKey:@"title"];
     cell.descriptionLbl.text = [duck objectForKey:@"description"];
@@ -81,26 +174,26 @@
 }
 
 
-- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
-    NSLog(@"%f",velocity.y);
-    if(velocity.y>2){
-     self.tableView.frame = CGRectMake(0,0,self.view.bounds.size.width, self.view.bounds.size.width);
-        
-    [UIView animateWithDuration:0.5 delay:0.4 options:UIViewAnimationOptionAllowAnimatedContent animations:^{
-        
-        self.topConstraint.constant = -20 + (self.view.frame.size.height/2);
-        
-        self.heightConstraint.constant = self.view.frame.size.height/2;
-
-        [self.tableView layoutSubviews];
-
-    } completion:^(BOOL finished) {
-        
-    }];
-        
-    }
-    
-}
+//- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
+//    NSLog(@"%f",velocity.y);
+//    if(velocity.y>2){
+//     self.tableView.frame = CGRectMake(0,0,self.view.bounds.size.width, self.view.bounds.size.width);
+//        
+//    [UIView animateWithDuration:0.5 delay:0.4 options:UIViewAnimationOptionAllowAnimatedContent animations:^{
+//        
+//        self.topConstraint.constant = -20 + (self.view.frame.size.height/2);
+//        
+//        self.heightConstraint.constant = self.view.frame.size.height/2;
+//
+//        [self.tableView layoutSubviews];
+//
+//    } completion:^(BOOL finished) {
+//        
+//    }];
+//        
+//    }
+//    
+//}
 #pragma Mark #
 
 -(void)dummyData{
@@ -119,4 +212,12 @@
     _dataArra = [NSMutableArray arrayWithObjects:dict,dict1,dict2,dict3,dict4,dict33,dict44,dict333,dict444, nil];
     
 }
+
+
+#pragma mark - 
+#pragma mark DRAGGING METHODS 
+
+
+
+
 @end
